@@ -1,0 +1,48 @@
+Thomas Payne
+
+STEP 4________
+1) mkdir csci3308
+2) mv csci3308/ CSCI3308_206
+3) unzip Lab1 (I unzipped the file and then moved zipped contents into the new directory)
+   mv Lab\ Materials/ CSCI3308_2066
+4) ls or ls -la to list hidden files
+5) ls -la -lS (this puts the files in a column and sorts based on greatest size)
+6) mkdir tinyData
+   cp images/majesticRalphie.png tinyData/
+   cd textFiles > ls -la -lS (sees what file is smallest)
+   cp textFiles/aliceinwonderland.txt tinyData/
+   ls -la -lS (tiny data has 4096 bytes)
+7) zip tinyData.zip tinyData (creates a zip file from tinyData dir)
+8) tar -cvf tinyData.tar tinyData (creates a tar file from tinyData dir)
+   ls -la -LS (tinyData.zip has 168 bytes, tinyData.tar has 286720 bytes)
+9) rm -Rf tinyData tinyData.zip
+10 / 11) tar -xvf tinyData.tar (x = extract v = verbose f = from/t0)
+    unzip little1.zip(extracts files to working directory)
+    unzip little2.zipo(makes a directory named little, and extracts content into that directory)
+12) find . -name target.txt (finds target file)
+	-from Lab1 dir is /emptyFolders/13/target.txt
+	-full path is /home/user/CSCI308/CSCI3308_206/Lab Materials/emptyFolders/13
+13) head -5 frankenstein.txt > myShortStory.txt
+    tail -5 heartofdarkness.txt >> myShortStory.txt
+
+
+// -k specifies column with succeding number
+// -t specifies delimiter
+// -n specifies numeralical value
+// -u removes duplicates
+STEP 5 ____
+1) tail -5 password_demo.txt | sort -k 1 -t:
+2) tail -5 password_demo.txt | sort -k 4 -n -t:
+3) grep -n "system" password_demo.txt
+4) wc password_demo.txt
+5) sort -k 3 -u -t: password_demo.txt
+6) sort -k 3 -u -t: password_demo.txt > tmp.
+7)
+vim getUniqGID.sh
+====IN FILE====
+sort -k 3 -u -t: password)demo.txt > tmp. 
+wc -l tmp.
+==============
+chmod +x getUniqGID.sh //gives file permissions to execute
+./getUniqGID.sh
+

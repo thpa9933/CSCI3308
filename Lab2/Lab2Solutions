@@ -1,0 +1,31 @@
+Thomas Payne
+
+Step1
+a.  diff scene1_v1.txt scene1_v2.txt
+b. < indicates V1 text while > indicates V2 text
+c. -c compares the lines in files
+
+Step2
+a. grep -n "pigeon" scene1_v1.txt
+b. diff scene1_v1.txt scene1_v2.txt | grep "^<"
+
+Step3
+a. grep ":" scene1_v1.txt | cut -d ":" -f 1
+b. diff scene1_v1.txt scene1_v2.txt | grep "^<" | grep ":" | cut -d ":" -f 1
+
+Step4
+a. sort scene1_v1.txt | uniq -d
+b. diff scene1_v1.txt scene1_v2.txt | grep "^<" | grep ":" | cut -d ":" -f 1 | sort | uniq -c
+
+Step5
+a1. sed 's/[a-z]//g' cryptic.txt
+a1. sed 's/[0-9]/_/g' cryptic.txt
+b. sed 's/4/a/g' | sed 's/3/e/g' | sed 's/1/i/g' | sed 's/0/o/g' | sed 's/5/s/g' | sed 's/7/t/g' cryptic.txt
+
+Step6
+a. egrep -c "[0-9](3)-[0-9]{3}-[0-9]{4}"
+b. egrep "[0-9](3)-[0-9]{3}-[0-9]{4}" | egrep -c "303-441
+
+Step7
+a. awk 'BEGIN{i=0}{i += $NF}END{print(i/NR)}' pizzaOrders.txt
+b. awk 'BEGIN{i=0; f=0}{i += $3; f+= $4}END{print((f/i)*100)}' pizzaOrder.txt
