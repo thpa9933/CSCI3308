@@ -1,0 +1,26 @@
+Thomas Payne Lab 6
+
+1. select * from store order by sname;
+2. select * from store order by sname limit 3;
+3. select * from store order by sname desc limit 3;
+4. select * from store where price > 1;
+5. select *, (qty * price) as extended_price from store;
+6. select sum(qty * price) from store;
+7. select * from course where department_id = 1;
+8. select sum(count) from enrollment; 
+9. select count(id) from department;
+10. update course set department_id = 3 where cname = '112';
+11. alter table enrollment add drop_count text;
+    alter table enrollment alter column drop_count type varchar;
+    alter table enrollment alter column drop_count integer;
+12. update enrollment set drop_count (count*.2); select * from enrollment;
+13. select * from course join department on course.department_id = department.id;
+    select concat(name, cname) from course join department on course.department_id = department.id;
+14. select * from course join department on course.department_id = department.id join enrollment on course.department_id = enrollment.id order by name
+
+15: a. alter table enrollment drop drop_count;
+    b. delete from enrollment where id > 0;
+    c. drop table enrollment;
+    d. see table.sql
+    e. select max(count) from new_enrollment;
+    f. see table.sql  
